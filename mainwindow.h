@@ -3,8 +3,6 @@
 
 #include <QMainWindow>
 
-class QWebEngineView;
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -19,6 +17,5 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    QWebEngineView *view;
 };
 #endif // MAINWINDOW_H

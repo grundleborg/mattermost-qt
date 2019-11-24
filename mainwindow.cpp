@@ -8,8 +8,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->view = new QWebEngineView(this->ui->tab);
-    this->ui->hLayout->addWidget(this->view);
+
+    QWebEngineView *view = new QWebEngineView();
+    this->ui->tabWidget->addTab(view, QIcon(), "Mattermost Community");
     view->load(QUrl("https://community.mattermost.com/"));
 }
 
