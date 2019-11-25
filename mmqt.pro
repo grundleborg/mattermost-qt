@@ -18,10 +18,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    tab.cpp \
     unconfiguredtab.cpp
 
 HEADERS += \
     mainwindow.h \
+    tab.h \
     unconfiguredtab.h
 
 FORMS += \

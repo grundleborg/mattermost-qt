@@ -1,11 +1,14 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+#include <QtCore/QList>
+#include <QtWidgets/QMainWindow>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
+
+class Tab;
 
 class MainWindow : public QMainWindow
 {
@@ -17,5 +20,6 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QList<Tab*> tabs;
 };
 #endif // MAINWINDOW_H

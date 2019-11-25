@@ -1,4 +1,6 @@
 #include "mainwindow.h"
+
+#include "tab.h"
 #include "ui_mainwindow.h"
 
 #include <QtWebEngineWidgets/QWebEngineView>
@@ -9,9 +11,17 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QWebEngineView *view = new QWebEngineView();
-    this->ui->tabWidget->addTab(view, QIcon(), "Mattermost Community");
-    view->load(QUrl("https://community.mattermost.com/"));
+    // TODO: Load pre-configured tabs from settings.
+
+    if (this->tabs.size() == 0) {
+        Tab *tab1 = new Tab("Mattermost Community", "https://community.mattermost.com", this);
+        this->tabs.append(tab1);
+        this->ui->tabWidget->addTab(tab1->widget(), QIcon(), "Mattermost Community");
+
+        Tab *tab2 = new Tab(this);
+        this->tabs.append(tab2);
+        this->ui->tabWidget->addTab(tab2->widget(), QIcon(), "Configure...");
+    }
 }
 
 MainWindow::~MainWindow()
