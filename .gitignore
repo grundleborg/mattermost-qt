@@ -1,1 +1,5 @@
 mmqt.pro.user
+.qmake.stash
+Makefile
+mmqt
+uic_wrapper.sh
