@@ -14,6 +14,10 @@ MainWindow::MainWindow(QWidget *parent)
     // TODO: Load pre-configured tabs from settings.
 
     if (this->tabs.size() == 0) {
+        Tab *tab0= new Tab("Mattermost Community", "chrome://sandbox/", this);
+        this->tabs.append(tab0);
+        this->ui->tabWidget->addTab(tab0->widget(), QIcon(), "Chrome GPU");
+
         Tab *tab1 = new Tab("Mattermost Community", "https://community.mattermost.com", this);
         this->tabs.append(tab1);
         this->ui->tabWidget->addTab(tab1->widget(), QIcon(), "Mattermost Community");
